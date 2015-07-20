@@ -157,12 +157,13 @@ myplot<-ggplot(summary, aes(x=birthDay, y=birthMonth, fill=fame)) +
   scale_size_area(max_size=18) +
   scale_fill_gradient(low="white", high="blue")
 
-myplot2<-myplot + xlab("Day") + ylab("Month") + ggtitle("When were NYTimes Celebrities born?") +
-  theme(axis.title.x=element_text(size=16, face="bold"), axis.title.y=element_text(size=16, face="bold"),
-        plot.title=element_text(size=18, face="bold", color="blue"))
+myplot2<-myplot + xlab("Day") + ylab("Month") + ggtitle("When Were NYTimes Celebrities Born?") +
+  theme(axis.title.x=element_text(size=24, face="bold"), axis.title.y=element_text(size=24, face="bold"),
+        plot.title=element_text(size=30, face="bold", color="blue"),
+        legend.title=element_text(size=16))
 
-myplot3<-myplot2 + scale_x_discrete(breaks=1:31) +
-  scale_y_discrete(labels=month.abb[1:12])
+myplot3<-myplot2 + scale_x_discrete(breaks=1:31) + scale_y_discrete(labels=month.abb[1:12]) +
+          labs(size="People Number", fill="Fame")
 
 myplot3 
 
@@ -175,9 +176,10 @@ myplot4<-ggplot(personZodiac, aes(x=zodiac, y=articleNum))+
   scale_y_continuous(limits=c(0,150))
 
 myplot5<-myplot4 + xlab("Zodiac Sign") + ylab("Article Number") + 
-  ggtitle(expression(atop("What zodiac signs make the biggest name?", atop(italic("(some outliers truncated)"), "")))) +
-  theme(axis.title.x=element_text(size=16, face="bold"), axis.title.y=element_text(size=16, face="bold"),
-        plot.title=element_text(size=18, face="bold", color="blue"))
+  ggtitle(expression(atop("What Zodiac Sign Makes The Biggest Name?", atop(italic("(some outliers truncated)"), "")))) +
+  theme(axis.title.x=element_text(size=24, face="bold"), axis.title.y=element_text(size=24, face="bold"),
+        plot.title=element_text(size=30, face="bold", color="blue"),
+        legend.title=element_text(size=16))
 
 myplot5
 
